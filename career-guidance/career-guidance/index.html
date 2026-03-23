@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI-powered Career Guidance Platform — Discover your ideal career path with personalized recommendations, skill gap analysis, learning roadmaps, and salary insights.">
+  <title>CareerPath AI — Smart Career Discovery</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-brand" onclick="navigateTo('home')"><span>🚀</span> CareerPath AI</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a onclick="navigateTo('home')" class="active" data-section="home">Home</a></li>
+      <li><a onclick="navigateTo('assessment')" data-section="assessment">Assessment</a></li>
+      <li><a onclick="navigateTo('results')" data-section="results">Results</a></li>
+      <li><a onclick="navigateTo('explore')" data-section="explore">Explore</a></li>
+      <li><a onclick="navigateTo('future')" data-section="future">Future 2030</a></li>
+      <li><a onclick="navigateTo('simulation')" data-section="simulation">Simulation</a></li>
+      <li><a onclick="navigateTo('chatbot')" data-section="chatbot">AI Chat</a></li>
+      <li><a onclick="navigateTo('dashboard')" data-section="dashboard">Dashboard</a></li>
+    </ul>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+  </nav>
+
+  <main class="main-content">
+
+    <!-- HOME -->
+    <section class="section active" id="section-home">
+      <div class="hero">
+        <h1>Discover Your <span class="gradient-text">Perfect Career</span></h1>
+        <p>AI-powered career guidance tailored for Indian students. Take our smart assessment and unlock your ideal career path.</p>
+        <button class="hero-cta" onclick="navigateTo('assessment')">🎯 Start Career Discovery</button>
+      </div>
+      <div class="grid-4" style="margin-top:24px">
+        <div class="card text-center" style="cursor:pointer" onclick="navigateTo('assessment')">
+          <div style="font-size:1.8rem;margin-bottom:6px">🧠</div>
+          <div style="font-size:0.9rem;font-weight:600;margin-bottom:2px">Assessment</div>
+          <div style="font-size:0.75rem;color:var(--text-3)">Personality & aptitude test</div>
+        </div>
+        <div class="card text-center" style="cursor:pointer" onclick="navigateTo('results')">
+          <div style="font-size:1.8rem;margin-bottom:6px">🎯</div>
+          <div style="font-size:0.9rem;font-weight:600;margin-bottom:2px">Career Match</div>
+          <div style="font-size:0.75rem;color:var(--text-3)">AI-powered recommendations</div>
+        </div>
+        <div class="card text-center" style="cursor:pointer" onclick="navigateTo('simulation')">
+          <div style="font-size:1.8rem;margin-bottom:6px">🎮</div>
+          <div style="font-size:0.9rem;font-weight:600;margin-bottom:2px">Simulation</div>
+          <div style="font-size:0.75rem;color:var(--text-3)">Experience a day in a career</div>
+        </div>
+        <div class="card text-center" style="cursor:pointer" onclick="navigateTo('chatbot')">
+          <div style="font-size:1.8rem;margin-bottom:6px">🤖</div>
+          <div style="font-size:0.9rem;font-weight:600;margin-bottom:2px">AI Chat</div>
+          <div style="font-size:0.75rem;color:var(--text-3)">Ask about any career</div>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="card text-center" style="cursor:pointer" onclick="navigateTo('explore')">
+          <div style="font-size:1.8rem;margin-bottom:6px">📚</div>
+          <div style="font-size:0.9rem;font-weight:600;margin-bottom:2px">Learning Roadmaps</div>
+          <div style="font-size:0.75rem;color:var(--text-3)">Step-by-step career plans</div>
+        </div>
+        <div class="card text-center" style="cursor:pointer" onclick="navigateTo('future')">
+          <div style="font-size:1.8rem;margin-bottom:6px">🔮</div>
+          <div style="font-size:0.9rem;font-weight:600;margin-bottom:2px">Future Careers 2030</div>
+          <div style="font-size:0.75rem;color:var(--text-3)">Emerging trends & predictions</div>
+        </div>
+        <div class="card text-center" style="cursor:pointer" onclick="navigateTo('dashboard')">
+          <div style="font-size:1.8rem;margin-bottom:6px">📊</div>
+          <div style="font-size:0.9rem;font-weight:600;margin-bottom:2px">Dashboard & Resume</div>
+          <div style="font-size:0.75rem;color:var(--text-3)">Track progress & build resume</div>
+        </div>
+      </div>
+
+      <!-- FOOTER on home -->
+      <footer class="footer">
+        <p>Built with ❤️ for Indian Students | CareerPath AI © 2025</p>
+        <div class="footer-links">
+          <a onclick="navigateTo('assessment')">Assessment</a>
+          <a onclick="navigateTo('explore')">Explore Careers</a>
+          <a onclick="navigateTo('future')">Future 2030</a>
+          <a onclick="navigateTo('chatbot')">AI Chat</a>
+          <a onclick="navigateTo('dashboard')">Dashboard</a>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ASSESSMENT -->
+    <section class="section" id="section-assessment">
+      <div class="section-header text-center">
+        <h2>🧠 Smart Career Assessment</h2>
+        <p>Complete all steps for personalized career recommendations</p>
+      </div>
+      <div class="tabs" id="assessmentTabs">
+        <button class="tab active" onclick="switchAssessmentStep(0)">1. About You</button>
+        <button class="tab" onclick="switchAssessmentStep(1)">2. Personality</button>
+        <button class="tab" onclick="switchAssessmentStep(2)">3. Aptitude</button>
+        <button class="tab" onclick="switchAssessmentStep(3)">4. Scenarios</button>
+      </div>
+      <div class="assessment-container">
+        <!-- Step 0 -->
+        <div class="assessment-step" id="assessment-step-0">
+          <div class="question-card">
+            <h3 style="margin-bottom:20px;font-size:1.1rem">Tell us about yourself</h3>
+            <div class="form-group">
+              <label>Your Interests (press Enter to add)</label>
+              <div class="tag-input-container" id="interestsContainer" onclick="document.getElementById('interestInput').focus()">
+                <input type="text" class="tag-input" id="interestInput" placeholder="e.g. coding, design, math..." onkeydown="handleTagInput(event,'interests')">
+              </div>
+              <div style="margin-top:6px">
+                <small style="color:var(--text-3)">Suggestions:</small>
+                <div class="pill-group" style="margin-top:4px">
+                  <span class="pill" onclick="addSuggestion('interests','coding')">coding</span>
+                  <span class="pill" onclick="addSuggestion('interests','design')">design</span>
+                  <span class="pill" onclick="addSuggestion('interests','math')">math</span>
+                  <span class="pill" onclick="addSuggestion('interests','science')">science</span>
+                  <span class="pill" onclick="addSuggestion('interests','technology')">technology</span>
+                  <span class="pill" onclick="addSuggestion('interests','business')">business</span>
+                  <span class="pill" onclick="addSuggestion('interests','healthcare')">healthcare</span>
+                  <span class="pill" onclick="addSuggestion('interests','government')">government</span>
+                  <span class="pill" onclick="addSuggestion('interests','security')">security</span>
+                  <span class="pill" onclick="addSuggestion('interests','data')">data</span>
+                  <span class="pill" onclick="addSuggestion('interests','art')">art</span>
+                  <span class="pill" onclick="addSuggestion('interests','finance')">finance</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Your Strengths / Skills (press Enter to add)</label>
+              <div class="tag-input-container" id="strengthsContainer" onclick="document.getElementById('strengthInput').focus()">
+                <input type="text" class="tag-input" id="strengthInput" placeholder="e.g. problem-solving, Python..." onkeydown="handleTagInput(event,'strengths')">
+              </div>
+              <div style="margin-top:6px">
+                <small style="color:var(--text-3)">Suggestions:</small>
+                <div class="pill-group" style="margin-top:4px">
+                  <span class="pill" onclick="addSuggestion('strengths','problem-solving')">problem-solving</span>
+                  <span class="pill" onclick="addSuggestion('strengths','programming')">programming</span>
+                  <span class="pill" onclick="addSuggestion('strengths','communication')">communication</span>
+                  <span class="pill" onclick="addSuggestion('strengths','leadership')">leadership</span>
+                  <span class="pill" onclick="addSuggestion('strengths','analytical')">analytical</span>
+                  <span class="pill" onclick="addSuggestion('strengths','creativity')">creativity</span>
+                  <span class="pill" onclick="addSuggestion('strengths','writing')">writing</span>
+                  <span class="pill" onclick="addSuggestion('strengths','math')">math</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Academic Level</label>
+              <select id="academicLevel" onchange="updateProfileField('academicLevel',this.value)">
+                <option value="">Select your level</option>
+                <option value="10th">Class 10th</option>
+                <option value="12th">Class 12th</option>
+                <option value="undergraduate">Undergraduate</option>
+                <option value="graduate">Graduate</option>
+                <option value="postgraduate">Post Graduate</option>
+                <option value="working">Working Professional</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Preferred Work Style</label>
+              <div class="pill-group" id="workStylePills">
+                <span class="pill" onclick="selectWorkStyle(this,'analytical')">🔬 Analytical</span>
+                <span class="pill" onclick="selectWorkStyle(this,'creative')">🎨 Creative</span>
+                <span class="pill" onclick="selectWorkStyle(this,'social')">🤝 Social</span>
+                <span class="pill" onclick="selectWorkStyle(this,'practical')">🔧 Practical</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Career Goals (select all that apply)</label>
+              <div class="pill-group" id="goalsPills">
+                <span class="pill" onclick="toggleGoal(this,'money')">💰 High Salary</span>
+                <span class="pill" onclick="toggleGoal(this,'stability')">🏠 Stability</span>
+                <span class="pill" onclick="toggleGoal(this,'innovation')">💡 Innovation</span>
+                <span class="pill" onclick="toggleGoal(this,'government')">🏛️ Government Job</span>
+                <span class="pill" onclick="toggleGoal(this,'growth')">📈 Fast Growth</span>
+                <span class="pill" onclick="toggleGoal(this,'creativity')">🎨 Creativity</span>
+              </div>
+            </div>
+            <div class="btn-group" style="justify-content:flex-end">
+              <button class="btn btn-primary" onclick="switchAssessmentStep(1)">Next: Personality Test →</button>
+            </div>
+          </div>
+        </div>
+        <!-- Step 1 -->
+        <div class="assessment-step" id="assessment-step-1" style="display:none">
+          <div class="progress-bar-container"><div class="progress-bar" id="personalityProgress" style="width:0%"></div></div>
+          <div id="personalityQuestions"></div>
+          <div class="btn-group" style="justify-content:space-between">
+            <button class="btn btn-secondary" onclick="switchAssessmentStep(0)">← Back</button>
+            <button class="btn btn-primary" onclick="switchAssessmentStep(2)">Next: Aptitude →</button>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="assessment-step" id="assessment-step-2" style="display:none">
+          <div class="progress-bar-container"><div class="progress-bar" id="aptitudeProgress" style="width:0%"></div></div>
+          <div id="aptitudeQuestions"></div>
+          <div class="btn-group" style="justify-content:space-between">
+            <button class="btn btn-secondary" onclick="switchAssessmentStep(1)">← Back</button>
+            <button class="btn btn-primary" onclick="switchAssessmentStep(3)">Next: Scenarios →</button>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="assessment-step" id="assessment-step-3" style="display:none">
+          <div class="progress-bar-container"><div class="progress-bar" id="scenarioProgress" style="width:0%"></div></div>
+          <div id="scenarioQuestions"></div>
+          <div class="btn-group" style="justify-content:space-between">
+            <button class="btn btn-secondary" onclick="switchAssessmentStep(2)">← Back</button>
+            <button class="btn btn-primary" onclick="completeAssessment()">🎯 Get My Results</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="section" id="section-results">
+      <div class="section-header">
+        <h2>🎯 Your Career Matches</h2>
+        <p>Based on your profile, assessment, and preferences</p>
+      </div>
+      <div id="resultsContainer"></div>
+    </section>
+
+    <!-- CAREER DETAIL -->
+    <section class="section" id="section-career-detail">
+      <div id="careerDetailContent"></div>
+    </section>
+
+    <!-- EXPLORE -->
+    <section class="section" id="section-explore">
+      <div class="section-header">
+        <h2>📚 Explore All Careers</h2>
+        <p>Browse career paths with roadmaps, salaries, and insights</p>
+      </div>
+      <div class="tabs">
+        <button class="tab active" onclick="filterCareers('all',this)">All</button>
+        <button class="tab" onclick="filterCareers('government',this)">🏛️ Government</button>
+        <button class="tab" onclick="filterCareers('private',this)">💼 Private</button>
+        <button class="tab" onclick="filterCareers('tech',this)">💻 Tech</button>
+        <button class="tab" onclick="filterCareers('creative',this)">🎨 Creative</button>
+      </div>
+      <div class="grid-3" id="exploreContainer"></div>
+    </section>
+
+    <!-- FUTURE 2030 -->
+    <section class="section" id="section-future">
+      <div class="section-header">
+        <h2>🔮 Future Careers — 2030 Predictions</h2>
+        <p>Top careers that will define the next decade</p>
+      </div>
+      <div id="futureContainer"></div>
+    </section>
+
+    <!-- SIMULATION -->
+    <section class="section" id="section-simulation">
+      <div class="section-header">
+        <h2>🎮 Career Simulation Mode</h2>
+        <p>Experience a day in your dream career — make real decisions!</p>
+      </div>
+      <div class="grid-3" id="simSelectContainer"></div>
+      <div id="simPlayContainer" style="display:none"></div>
+    </section>
+
+    <!-- CHATBOT -->
+    <section class="section" id="section-chatbot">
+      <div class="section-header text-center">
+        <h2>🤖 AI Career Advisor</h2>
+        <p>Ask me anything about careers, exams, skills, or your future!</p>
+      </div>
+      <div class="chatbot-container">
+        <div class="chatbot-header">
+          <div class="chatbot-avatar">🤖</div>
+          <div class="chatbot-info"><h3>CareerBot</h3><p>● Online</p></div>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="quick-suggestions">
+          <button class="quick-suggestion" onclick="sendQuickChat('Is cyber security good for me?')">🛡️ Cyber Security</button>
+          <button class="quick-suggestion" onclick="sendQuickChat('Can I crack UPSC?')">🏛️ UPSC</button>
+          <button class="quick-suggestion" onclick="sendQuickChat('Tell me about data science')">📊 Data Science</button>
+          <button class="quick-suggestion" onclick="sendQuickChat('What are the best careers in 2030?')">🔮 Future Careers</button>
+          <button class="quick-suggestion" onclick="sendQuickChat('Compare salaries of top careers')">💰 Salary Info</button>
+          <button class="quick-suggestion" onclick="sendQuickChat('What can you do?')">❓ Help</button>
+        </div>
+        <div class="chat-input-container">
+          <input type="text" id="chatInput" placeholder="Ask me about careers..." onkeydown="if(event.key==='Enter')sendChat()">
+          <button class="chat-send-btn" onclick="sendChat()">➤</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section class="section" id="section-dashboard">
+      <div class="section-header">
+        <h2>📊 Your Dashboard</h2>
+        <p>Track your progress, skills, and build your resume</p>
+      </div>
+      <div id="dashboardContent"></div>
+    </section>
+
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/gemini.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
